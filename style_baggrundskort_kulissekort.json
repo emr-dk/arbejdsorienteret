@@ -1,0 +1,282 @@
+{
+  "version": 8,
+  "name": "MapLibre",
+  "metadata": {
+    "maptiler:copyright": "This style was generated on MapTiler Cloud. Usage is governed by the license terms in https://github.com/maplibre/demotiles/blob/gh-pages/LICENSE",
+    "openmaptiles:version": "3.x",
+    "maputnik:renderer": "mlgljs"
+  },
+  "center": [12.65431710431244, 55.954120326746775],
+  "zoom": 12,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "kkkort": {
+      "type": "vector",
+      "scheme": "tms",
+      "tiles": [
+        "https://wfs-kbhkort.kk.dk/gwc/service/tms/1.0.0/baggrundskort%3Avector-kulisse-test@EPSG:900913@pbf/{z}/{x}/{y}.pbf"
+      ],
+      "maxzoom": 20
+    }
+  },
+  "glyphs": "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "havflade",
+      "type": "background",
+      "source": "kkkort",
+      "source-layer": "havflade",
+      "paint": {"background-color": "#c8d7ff"}
+    },
+    {
+      "id": "landflade-copy",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "landflade_omegn",
+      "maxzoom": 14,
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#fef9eb"}
+    },
+    {
+      "id": "landflade",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "landflade_omegn",
+      "minzoom": 14,
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#ffffff"}
+    },
+    {
+      "id": "københavnunderlag",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "kommunegr_omegn",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "kommunekode", "0101"]],
+      "paint": {"fill-color": "#fff", "fill-opacity": 1}
+    },
+    {
+      "id": "kommunegrænser-copy-copy",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "kommunegr_omegn",
+      "minzoom": 12,
+      "maxzoom": 14,
+      "filter": ["all", ["!=", "kommunekode", "0101"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#d4d1cc",
+        "fill-outline-color": "#d4d1cc",
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "kommunegrænser",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "kommunegr_omegn",
+      "minzoom": 0,
+      "maxzoom": 12,
+      "filter": ["all", ["!=", "kommunekode", "0101"]],
+      "paint": {"fill-color": "#d4d1cc", "fill-outline-color": "#d4d1cc"}
+    },
+    {
+      "id": "karre",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "karre",
+      "minzoom": 0,
+      "maxzoom": 24,
+      "paint": {"fill-color": "#ffffff", "fill-outline-color": "#b4b4b4"}
+    },
+    {
+      "id": "kirkegaard",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "kirkegaard",
+      "paint": {"fill-color": "#cbedb3", "fill-outline-color": "#d2d2d2"}
+    },
+    {
+      "id": "rekromr",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "rekromr",
+      "paint": {"fill-color": "#b4de96", "fill-outline-color": "#b4de96"}
+    },
+    {
+      "id": "soe",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "soe",
+      "paint": {"fill-color": "#c8d7ff", "fill-outline-color": "#c8d7ff"}
+    },
+    {
+      "id": "bygning",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "bygning",
+      "paint": {
+        "fill-color": "#c8c8c8",
+        "fill-outline-color": "#7f7f7f",
+        "fill-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "anlaeg",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "anlaeg",
+      "paint": {"fill-color": "#a0a0a0"}
+    },
+    {
+      "id": "jernbane-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-dasharray": [8, 8],
+        "line-color": "#646464",
+        "line-width": 3
+      }
+    },
+    {
+      "id": "jernbane-copy-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane",
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "#ffffff", "line-width": 2}
+    },
+    {
+      "id": "jernbane",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane",
+      "layout": {"visibility": "visible"},
+      "paint": {"line-dasharray": [8, 8], "line-color": "#646464"}
+    },
+    {
+      "id": "sti",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "sti",
+      "paint": {"line-color": "#b4b4b4", "line-dasharray": [8, 4]}
+    },
+    {
+      "id": "vejkant",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "vejkant",
+      "paint": {"line-color": "#a0a0a0"}
+    },
+    {
+      "id": "vejmidte",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "vejmidte",
+      "maxzoom": 9,
+      "paint": {"line-color": "#b4b4b4"}
+    },
+    {
+      "id": "bro",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "bro",
+      "paint": {"line-color": "#a0a0a0"}
+    },
+    {
+      "id": "omegn_karre",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "karre_omegn",
+      "minzoom": 12,
+      "maxzoom": 14,
+      "paint": {"fill-color": "#d4d1cc", "fill-outline-color": "#b4b4b4"}
+    },
+    {
+      "id": "omegn_karre-copy",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "karre_omegn",
+      "minzoom": 14,
+      "paint": {"fill-color": "#fff", "fill-outline-color": "#b4b4b4"}
+    },
+    {
+      "id": "omegn_soe",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "soe_omegn",
+      "paint": {"fill-color": "#c8d7ff", "fill-outline-color": "#c8d7ff"}
+    },
+    {
+      "id": "omegn_vejmidte",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "vejmidte_omegn",
+      "paint": {"line-color": "#b4b4b4"}
+    },
+    {
+      "id": "omegn_jernbane-copy-copy-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane_omegn",
+      "paint": {"line-color": "#646464", "line-width": 3}
+    },
+    {
+      "id": "omegn_jernbane-copy-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane_omegn",
+      "paint": {"line-color": "#ffffff", "line-width": 2}
+    },
+    {
+      "id": "omegn_jernbane-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "jernbane_omegn",
+      "paint": {"line-color": "#646464", "line-dasharray": [8, 8]}
+    },
+    {
+      "id": "omegn_kirkegaard",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "kirkegaard_omegn",
+      "paint": {"fill-color": "#cbedb3", "fill-outline-color": "#d2d2d2"}
+    },
+    {
+      "id": "omegn_vaadomraade",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "vaadomraade_omegn"
+    },
+    {
+      "id": "omegn_rekromr",
+      "type": "fill",
+      "source": "kkkort",
+      "source-layer": "rekromr_omegn",
+      "paint": {"fill-color": "#b4de96", "fill-outline-color": "#99bd7f"}
+    },
+    {
+      "id": "bygrænser-copy",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "kommunegr_omegn",
+      "filter": ["all", ["!=", "kommunekode", "0101"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-width": 3, "line-color": "gray", "line-offset": 1}
+    },
+    {
+      "id": "bygrænser",
+      "type": "line",
+      "source": "kkkort",
+      "source-layer": "kommunegr_omegn",
+      "filter": ["all", ["!=", "kommunekode", "0101"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-width": 1}
+    }
+  ],
+  "id": "43f36e14-e3f5-43c1-84c0-50a9c80dc5c7"
+}
