@@ -136,11 +136,7 @@
       "source": "kkkort",
       "source-layer": "jernbane",
       "layout": {"visibility": "visible"},
-      "paint": {
-        "line-dasharray": [8, 8],
-        "line-color": "#646464",
-        "line-width": 3
-      }
+      "paint": {"line-color": "#646464", "line-width": 3}
     },
     {
       "id": "jernbane-copy-copy",
@@ -276,6 +272,19 @@
       "filter": ["all", ["!=", "kommunekode", "0101"]],
       "layout": {"visibility": "visible"},
       "paint": {"line-width": 1}
+    },
+    {
+      "id": "bygningskygge",
+      "type": "fill-extrusion",
+      "source": "kkkort",
+      "source-layer": "bygning",
+      "minzoom": 17,
+      "paint": {
+        "fill-extrusion-color": "#c8c8c8",
+        "fill-extrusion-height": 10,
+        "fill-extrusion-vertical-gradient": true,
+        "fill-extrusion-opacity": 0.75
+      }
     }
   ],
   "id": "43f36e14-e3f5-43c1-84c0-50a9c80dc5c7"
